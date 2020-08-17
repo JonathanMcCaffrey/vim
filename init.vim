@@ -26,10 +26,18 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'omnisharp/omnisharp-vim'
 Plug 'oranget/vim-csharp'
 Plug 'tpope/vim-fugitive'
-Plug 'mnick/vim-pomodoro'
+Plug 'vim-airline/vim-airline'
 
 " Initialize plugin system
 call plug#end()
+
+" Git
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
+
+nmap <C-space> :w<CR> :! dotnet run<CR>
+
 
 inoremap jk <ESC>
 nmap <C-n> :NERDTreeToggle<CR>
@@ -37,9 +45,6 @@ au VimEnter * NERDTree
 
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
-
-" Prettier JonMcC
-nmap <C-space> :Prettier<CR>
 
 
 " open NERDTree automatically
@@ -218,8 +223,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
@@ -243,4 +246,14 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " Set Razor Syntax highlighting
 autocmd BufNewFile,BufRead *.razor :set filetype=cshtml
 
+
+
+
+" Pomodoro Timer
+
+
+
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
