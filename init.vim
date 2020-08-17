@@ -25,6 +25,8 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 " Custom Plugins JonMcC
 Plug 'omnisharp/omnisharp-vim'
 Plug 'oranget/vim-csharp'
+Plug 'tpope/vim-fugitive'
+Plug 'mnick/vim-pomodoro'
 
 " Initialize plugin system
 call plug#end()
